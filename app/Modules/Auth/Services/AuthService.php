@@ -22,6 +22,16 @@ class AuthService
     ) {
         $this->userRepo = $userRepo;
     }
+
+    /**
+     * boot
+     *
+     * @return void
+     */
+    public function boot()
+    {
+        Sanctum::usePersonalAccessTokenModel(SanctumAccessTokenService::class);
+    }
     
     /**
      * login
