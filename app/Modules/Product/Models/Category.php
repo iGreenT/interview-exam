@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Modules\Auth\Models;
+namespace App\Product\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Group extends Model
+class Category extends Model
 {
     /**
      * The attributes that are mass assignable.
