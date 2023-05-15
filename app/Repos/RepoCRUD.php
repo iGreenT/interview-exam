@@ -11,9 +11,9 @@ use Illuminate\Database\Eloquent\Model;
      *
      * @param  int  $id
      * @param  bool $strict
-     * @return void
+     * @return Model|null
      */
-    public function findById(int $id, bool $strict = true): Model
+    public function findById(int $id, bool $strict = true): ?Model
     {
         if ($strict) {
             return $this->model->findOrFail($id);
@@ -69,5 +69,16 @@ use Illuminate\Database\Eloquent\Model;
     public function deletedById(int $id): bool
     {
         return $this->model->findOrFail($id)->delete();
+    }
+    
+    /**
+     * flag deleted by id
+     *
+     * @param  mixed $id
+     * @return bool
+     */
+    public function flagDeletedById(int $id): bool
+    {
+        return $this->model->where('id', $id)->update('deleted', true);
     }
  }

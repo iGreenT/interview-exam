@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Product\Models;
+namespace App\Modules\Product\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
@@ -29,7 +29,7 @@ class Product extends Model
         'name'          => 'string',
         'description'   => 'string',
         'short_code'    => 'string',
-        'category_id'   => 'intefer',
+        'category_id'   => 'integer',
         'price'         => 'float',
     ];
 
