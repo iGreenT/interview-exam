@@ -34,10 +34,6 @@ class ValidationException extends HttpException
             $this->errors = is_array($errors) ? new MessageBag($errors) : $errors;
         }
 
-        // if (empty($message)) {
-
-        // }
-
         parent::__construct(422, $message, $previous, $headers, $code);
     }
 
