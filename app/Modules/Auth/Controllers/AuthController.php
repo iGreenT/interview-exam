@@ -18,6 +18,9 @@ class AuthController extends Controller
     /**
      * __construct
      *
+     * @param  UserRepo       $userRepo
+     * @param  AuthValidation $authValidation
+     * @param  AuthService    $authService
      * @return void
      */
     public function __construct(
@@ -29,7 +32,13 @@ class AuthController extends Controller
         $this->authValidation = $authValidation;
         $this->authService = $authService;
     }
-
+    
+    /**
+     * login
+     *
+     * @param  Request $request
+     * @return JsonResponse
+     */
     public function login(Request $request): JsonResponse
     {
         $data = $this->authValidation->login($request);
